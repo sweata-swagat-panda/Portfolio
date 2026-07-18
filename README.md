@@ -1,107 +1,100 @@
-# 🚀 Professional Portfolio - Sweata Swagat Panda
+# 🚀 Sweata Swagat Panda — Portfolio
 
-[![Portfolio](https://img.shields.io/badge/Portfolio-Live-success)](https://your-username.github.io/portfolio/)
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Live Portfolio](https://img.shields.io/badge/Portfolio-Live-6366F1)](https://sweata-swagat-panda.github.io/Portfolio/)
+[![Playwright](https://img.shields.io/badge/Playwright-TypeScript-45ba4b)](https://playwright.dev/)
+[![Tricentis Tosca](https://img.shields.io/badge/Tricentis-Tosca-22D3EE)](https://www.tricentis.com/products/automate-continuous-testing-tosca)
+[![AI-Powered QE](https://img.shields.io/badge/AI--Powered-Quality%20Engineering-8B5CF6)](#)
 
-## 👨‍💻 About Me
+> **Test Automation Lead** · Playwright (TypeScript) & Tricentis Tosca · AI-Powered Quality Engineering
 
-Quality Engineering Automation Specialist with AI Powered Tools, specializing in precision-driven test automation and AI-powered quality engineering solutions.
+## 👩‍💻 About
 
-**6+ Years of Excellence** in delivering enterprise-grade automation frameworks, CI/CD pipelines, and comprehensive testing strategies for Fortune 500 clients.
+Quality Engineering and Test Automation leader with **7+ years at Accenture**, delivering
+enterprise quality for AI-powered Finance & Accounting platforms across **Procure-to-Pay (P2P),
+Record-to-Report (R2R), and Order-to-Cash (O2C)**. I lead a 22-member automation team, architect
+**dual-stack frameworks** in Playwright (TypeScript, config-driven) and Tricentis Tosca
+(model-based), and embed **Agentic AI** — MCP servers, AI agents, and self-healing locators —
+across the full Automation Development Life Cycle (ADLC).
 
-## 🌟 Highlights
+## 📊 Impact at a Glance
 
-- 🤖 **AI-Powered Testing**: Expertise in Gen AI and Agentic AI tools (Kiro AI, GitHub Copilot, ChatGPT, Gemini)
-- 🔧 **Test Automation**: Tricentis Tosca, Selenium, API Testing
-- 🔄 **CI/CD Excellence**: Azure DevOps, TestRail, ALM
-- 📊 **Data Analytics**: Power BI, SQL, Advanced Excel
-- 🏆 **Award-Winning**: TechStar, ACE Award, Sparkling Star, Tosca Community Award
+| Metric | Value |
+|---|---|
+| Experience | **7+ years** |
+| Automation-led savings | **$1.9M+** |
+| Test cases automated | **3,780+ of 4,900+ (~77%)** |
+| Team led | **22 members** (11 mentees, 6 promoted) |
+| Client implementations | **250+** |
+| Defects surfaced | **11,000+** |
+| Test-cycle reduction | **50–70%** |
 
 ## 🛠️ Technical Stack
 
-### Core Automation Tools
-- Tricentis Tosca (Vision AI, TQL, API Testing)
-- Selenium (Java, Python, Eclipse)
-- Postman API Testing
-- Perfecto Mobile Testing
+**Test Automation:** Playwright (TypeScript, config-driven), Tricentis Tosca (model-based, Modules/TBox, TQL, Tosca API), Pytest (Python), Selenium WebDriver · POM, Data-Driven, Keyword-Driven, Hybrid, BDD
 
-### AI & Development Tools
-- Kiro AI
-- GitHub Copilot
-- ChatGPT
-- Gemini
-- VS Code
-- Synops
+**AI & Agentic Automation:** MCP (Model Context Protocol) servers, AI agents, reusable skills & event-driven hooks, Gen AI test design, Vision AI, self-healing locators, Kiro AI, GitHub Copilot
 
-### Testing Methodologies
-- Accessibility Testing
-- Functional Testing
-- Regression Testing
-- UAT/SIT/PAT/SRT
-- UI/UX Testing
-- Product Testing
+**CI/CD & DevOps:** Azure DevOps (Pipelines, Repos, Test Plans, Boards), Jenkins, GitHub, YAML, Git, multi-VDI grids
 
-### CI/CD & DevOps
-- Azure DevOps
-- TestRail
-- ALM (Application Lifecycle Management)
-- Multi-VDI Environments
+**API & Performance:** Playwright API, Pytest + Requests, Postman, Tosca API, k6
 
-## 📂 Featured Projects
+**Test Management & Analytics:** Azure Test Plans, JIRA, TestRail, HP ALM, Allure, Power BI, SQL
 
-### 1. Invoice to Pay (I2P) - Agentic AI
-AI-powered invoice processing automation using Agentic AI for intelligent document handling and reconciliation.
+**Accessibility & Methodologies:** axe-core, WCAG 2.x · Functional, Regression, UAT/SIT, Risk-Based, Shift-Left, Agile/Scrum
 
-### 2. Automated Account Payable (AAP) - Gen AI
-Gen AI-powered automation for accounts payable workflows with intelligent task management.
+## 📂 Featured Programs
 
-### 3. ReconSmart PC & Reconciliation
-Comprehensive reconciliation system with seamless SAP, Oracle, and ERP integration.
-
-### 4. Tradeshift Invoice Processing
-Automated invoice processing framework with advanced validation and compliance checking.
-
-### 5. Cevinio & MSP
-Enterprise management solutions with comprehensive test automation coverage.
-
-### 6. Document Flow Manager (DFM) & ATCAT
-Advanced document management and automated testing frameworks.
+| Program | Stack | Automated | Cycle | Saved | Clients |
+|---|---|---|---|---|---|
+| Invoice-to-Pay (I2P) — Agentic AI | Playwright + TS | 1,320 / 2,000+ | 2 mo → 3 wk | ~$300K | 13 |
+| Automated Accounts Payable (AAP) — Gen AI | Playwright + TS | 1,400 / 1,500+ | 7 → 2 wk | ~$575K | 22 |
+| ReconSmart & Reconciliation (R2R) | Tricentis Tosca | 600 / 700+ | 2 → 1 wk | ~$600K | 120+ |
+| Document Flow Manager (DFM) | Tricentis Tosca | 180 / 200 | 1 wk → 3 d | ~$150K | 40+ |
+| MSP — Vendor Invoice Generation | Tricentis Tosca | 180 / 200 | 1 wk → 3 d | ~$150K | 30+ |
+| ATCAT — Duplicate Invoice Detection | Tricentis Tosca | 100 / 300 | 1 wk → 3 d | ~$200K | 15 |
 
 ## 🎓 Certifications
 
-- ✅ Tosca Automation Engineering 1
+- ✅ **ISTQB Certified Tester — Advanced Level** (2021)
+- ✅ Tosca Automation Engineer 1
 - ✅ Tosca Test Design & Automation Specialist 1 & 2
 - ✅ Tosca Query Language (TQL)
 - ✅ Tosca Exploratory Testing Specialist
 - ✅ Tosca qTest & API Automation Specialist
-- ✅ Microsoft PL900 & AZ500
+- ✅ Microsoft Certified — PL-900 & AZ-500
 - ✅ Java & Python Programming
-- ✅ Information Security - Elite Advocate
+- ✅ Information Security — Elite Advocate
 
 ## 🏆 Awards & Recognition
 
-- 🥇 **TechStar Award** - Accenture (2022)
-- 🥇 **ACE Award** - Accenture (2021, 2024)
-- ⭐ **Sparkling Star Award** - Accenture (2022, 2023, 2024)
-- 🏅 **Tosca Community Award** - Tricentis (2024)
+- 🥇 **TechStar Award** — Accenture (2022)
+- 🥇 **ACE Award** — Accenture (2021, 2024)
+- ⭐ **Sparkling Star Award** — Accenture (2022, 2023, 2024)
+- 🏅 **Tosca Community Award** — Tricentis (2024)
+
+## 🎓 Education
+
+- **Executive Programme in General Management** — IIM Calcutta (2022–2023)
+- **B.Tech, Electronics & Electrical Engineering** — KIIT University, Bhubaneswar (2015–2019)
 
 ## 📫 Contact
 
 - 📧 Email: [s.swagatpanda@gmail.com](mailto:s.swagatpanda@gmail.com)
-- 📱 Phone: +91 9778632345
-- 💼 LinkedIn: [Your LinkedIn Profile]
-- 🐙 GitHub: [Your GitHub Profile]
+- 📱 Phone: +91 97786 32345
+- 💼 LinkedIn: [linkedin.com/in/sweata-swagat-panda-634331216](https://www.linkedin.com/in/sweata-swagat-panda-634331216)
+- 🐙 GitHub: [github.com/sweata-swagat-panda](https://github.com/sweata-swagat-panda)
+- 📄 Resume: [Download (PDF)](Sweata-Swagat-Panda-Resume.pdf)
 
 ## 🌐 Live Portfolio
 
-Visit my portfolio: [https://your-username.github.io/portfolio/](https://your-username.github.io/portfolio/)
+👉 **[https://sweata-swagat-panda.github.io/Portfolio/](https://sweata-swagat-panda.github.io/Portfolio/)**
 
-## 📄 License
+## 🧩 Built With
 
-This project is open source and available under the [MIT License](LICENSE).
+`HTML5` · `Tailwind CSS` · `Space Grotesk` + `Inter` · `Font Awesome` · vanilla JS —
+a responsive, single-page **Aurora Glass** dark theme (animated aurora gradients, frosted-glass
+cards, scroll-reveal motion).
 
 ---
 
-**Built with ❤️ using HTML5, Tailwind CSS, and modern web technologies**
-
-*Scaling quality at speed through AI-powered test automation, strategic CI/CD integration, and precision-engineered frameworks that deliver measurable ROI.*
+© 2026 Sweata Swagat Panda
