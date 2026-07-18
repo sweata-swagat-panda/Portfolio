@@ -3,993 +3,765 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sweata Swagat Panda - Automation Quality Engineering Specialist</title>
+    <title>Sweata Swagat Panda - Test Automation Lead | Playwright, Tosca & AI-Powered QE</title>
+    <meta name="description" content="Sweata Swagat Panda - Test Automation Lead specializing in Playwright (TypeScript), Tricentis Tosca, and AI-powered quality engineering. 7+ years, $1.9M+ in automation savings.">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        'cobalt': '#0047AB',
-                        'teal': '#008B8B',
-                        'dark-bg': '#0A0E27',
-                        'dark-card': '#151B3D',
-                        'dark-accent': '#1E2749'
+                        ink: '#05070F',
+                        indigo: '#6366F1',
+                        violet: '#8B5CF6',
+                        cyan: '#22D3EE'
+                    },
+                    fontFamily: {
+                        display: ['"Space Grotesk"', 'sans-serif'],
+                        sans: ['Inter', 'sans-serif']
                     }
                 }
             }
         }
     </script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-        
+        :root {
+            --bg: #05070F;
+            --ink: #E7EAF3;
+            --muted: #98A2B8;
+            --subtle: #6B7688;
+            --border: rgba(255, 255, 255, 0.09);
+            --border-strong: rgba(255, 255, 255, 0.18);
+        }
+
+        * { scroll-behavior: smooth; }
+
         body {
             font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--ink);
+            overflow-x: hidden;
         }
-        
-        .gradient-text {
-            background: linear-gradient(135deg, #0047AB 0%, #008B8B 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .gradient-border {
-            position: relative;
-            background: linear-gradient(135deg, #0047AB 0%, #008B8B 100%);
-            padding: 2px;
-            border-radius: 12px;
-        }
-        
-        .gradient-border-inner {
-            background: #151B3D;
-            border-radius: 10px;
-            height: 100%;
-        }
-        
-        .tech-card {
-            transition: all 0.3s ease;
-        }
-        
-        .tech-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0, 71, 171, 0.3);
-        }
-        
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -8px;
-            top: 0;
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #0047AB 0%, #008B8B 100%);
-            box-shadow: 0 0 20px rgba(0, 71, 171, 0.6);
-        }
-        
-        .cert-badge {
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .cert-badge:hover {
-            transform: scale(1.05) rotate(2deg);
-        }
-        
-        .award-shine {
-            position: relative;
+
+        h1, h2, h3, .font-display { font-family: 'Space Grotesk', sans-serif; }
+
+        /* ---------- Aurora background ---------- */
+        .aurora {
+            position: fixed;
+            inset: 0;
+            z-index: -2;
             overflow: hidden;
+            background:
+                radial-gradient(1200px 600px at 15% -10%, rgba(99, 102, 241, 0.10), transparent 60%),
+                radial-gradient(1000px 500px at 100% 0%, rgba(34, 211, 238, 0.08), transparent 55%),
+                var(--bg);
         }
-        
-        .award-shine::after {
-            content: '';
+        .blob {
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
-            transform: rotate(45deg);
-            animation: shine 3s infinite;
+            border-radius: 50%;
+            filter: blur(90px);
+            opacity: 0.30;
+            will-change: transform;
         }
-        
-        @keyframes shine {
-            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
-            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        .blob-1 { width: 480px; height: 480px; background: #6366F1; top: -120px; left: -80px; animation: drift1 24s ease-in-out infinite alternate; }
+        .blob-2 { width: 420px; height: 420px; background: #22D3EE; top: 30%; right: -120px; animation: drift2 28s ease-in-out infinite alternate; }
+        .blob-3 { width: 380px; height: 380px; background: #8B5CF6; bottom: -100px; left: 35%; animation: drift3 30s ease-in-out infinite alternate; }
+        @keyframes drift1 { to { transform: translate(120px, 80px) scale(1.15); } }
+        @keyframes drift2 { to { transform: translate(-100px, 60px) scale(1.1); } }
+        @keyframes drift3 { to { transform: translate(80px, -70px) scale(1.2); } }
+
+        .grid-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+            background-size: 64px 64px;
+            -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 30%, transparent 80%);
+            mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 30%, transparent 80%);
         }
-        
-        .floating {
-            animation: floating 3s ease-in-out infinite;
+
+        /* ---------- Glass ---------- */
+        .glass {
+            background: rgba(255, 255, 255, 0.045);
+            border: 1px solid var(--border);
+            backdrop-filter: blur(14px) saturate(140%);
+            -webkit-backdrop-filter: blur(14px) saturate(140%);
         }
-        
-        @keyframes floating {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
+        .glass-hover {
+            transition: transform 0.4s cubic-bezier(0.2, 0.7, 0.2, 1), border-color 0.4s ease, box-shadow 0.4s ease;
         }
-        
-        .fade-in {
-            animation: fadeIn 0.8s ease-in;
+        .glass-hover:hover {
+            transform: translateY(-6px);
+            border-color: var(--border-strong);
+            box-shadow: 0 24px 60px -24px rgba(99, 102, 241, 0.5);
         }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+
+        /* ---------- Gradient text & accents ---------- */
+        .grad {
+            background: linear-gradient(120deg, #818CF8 0%, #A78BFA 42%, #22D3EE 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
-        
-        .project-card {
-            transition: all 0.4s ease;
-            background: linear-gradient(135deg, #151B3D 0%, #1E2749 100%);
+        .eyebrow {
+            font-family: 'Space Grotesk', sans-serif;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            font-size: 0.72rem;
+            font-weight: 600;
         }
-        
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 25px 50px rgba(0, 139, 139, 0.3);
+
+        /* ---------- Buttons ---------- */
+        .btn-primary {
+            background: linear-gradient(120deg, #6366F1, #8B5CF6);
+            box-shadow: 0 10px 30px -10px rgba(99, 102, 241, 0.7);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        
-        .skill-pill {
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 16px 40px -12px rgba(139, 92, 246, 0.8); }
+        .btn-ghost {
+            border: 1px solid var(--border-strong);
+            background: rgba(255, 255, 255, 0.03);
             transition: all 0.3s ease;
         }
-        
-        .skill-pill:hover {
-            background: linear-gradient(135deg, #0047AB 0%, #008B8B 100%);
-            transform: scale(1.1);
+        .btn-ghost:hover { background: rgba(255, 255, 255, 0.08); transform: translateY(-2px); }
+
+        /* ---------- Icon chip ---------- */
+        .chip {
+            width: 54px; height: 54px; border-radius: 15px;
+            display: grid; place-items: center;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.22), rgba(34, 211, 238, 0.16));
+            border: 1px solid var(--border);
+        }
+
+        /* ---------- Pills ---------- */
+        .pill {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            transition: all 0.25s ease;
+        }
+        .pill:hover {
+            background: linear-gradient(120deg, rgba(99, 102, 241, 0.28), rgba(34, 211, 238, 0.22));
+            border-color: var(--border-strong);
+            transform: translateY(-2px);
+        }
+
+        /* ---------- Reveal on scroll ---------- */
+        .reveal { opacity: 0; transform: translateY(26px); transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1); }
+        .reveal.in { opacity: 1; transform: none; }
+
+        /* ---------- Scroll progress ---------- */
+        .progress { position: fixed; top: 0; left: 0; height: 2px; width: 0%; z-index: 60; background: linear-gradient(90deg, #6366F1, #22D3EE); transition: width 0.1s linear; }
+
+        /* ---------- Nav links ---------- */
+        .navlink { position: relative; color: var(--muted); transition: color 0.25s ease; }
+        .navlink::after {
+            content: ''; position: absolute; left: 0; bottom: -6px; height: 2px; width: 0;
+            background: linear-gradient(90deg, #6366F1, #22D3EE); transition: width 0.3s ease; border-radius: 2px;
+        }
+        .navlink:hover, .navlink.active { color: #fff; }
+        .navlink.active::after { width: 100%; }
+
+        /* ---------- Timeline ---------- */
+        .tl-dot::before {
+            content: ''; position: absolute; left: -9px; top: 4px; width: 18px; height: 18px; border-radius: 50%;
+            background: linear-gradient(135deg, #6366F1, #22D3EE);
+            box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.15), 0 0 22px rgba(99, 102, 241, 0.6);
+        }
+
+        /* ---------- Marquee ---------- */
+        .marquee { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); }
+        .marquee__track { display: flex; gap: 3rem; width: max-content; animation: scroll 30s linear infinite; }
+        @keyframes scroll { to { transform: translateX(-50%); } }
+
+        /* ---------- Card top accent ---------- */
+        .project { position: relative; overflow: hidden; }
+        .project::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+            background: linear-gradient(90deg, #6366F1, #8B5CF6, #22D3EE);
+            transform: scaleX(0); transform-origin: left; transition: transform 0.4s ease;
+        }
+        .project:hover::before { transform: scaleX(1); }
+
+        .pulse-dot { width: 8px; height: 8px; border-radius: 50%; background: #34D399; box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.6); animation: pulse 2s infinite; }
+        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.55); } 70% { box-shadow: 0 0 0 10px rgba(52, 211, 153, 0); } 100% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0); } }
+
+        @media (prefers-reduced-motion: reduce) {
+            .blob, .marquee__track, .pulse-dot { animation: none; }
+            .reveal { opacity: 1; transform: none; }
         }
     </style>
 </head>
-<body class="bg-dark-bg text-gray-100">
-    
+<body class="bg-ink text-gray-100">
+
+    <div class="progress" id="progress"></div>
+    <div class="aurora"><div class="blob blob-1"></div><div class="blob blob-2"></div><div class="blob blob-3"></div></div>
+    <div class="grid-overlay"></div>
+
     <!-- Navigation -->
-    <nav class="fixed w-full bg-dark-bg/95 backdrop-blur-sm z-50 border-b border-gray-800">
+    <nav class="fixed w-full z-50 glass border-b border-white/5">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
-                <div class="flex-shrink-0">
-                    <h1 class="text-2xl font-bold gradient-text">SSP</h1>
-                </div>
-                <div class="hidden md:flex space-x-8">
-                    <a href="#home" class="hover:text-cobalt transition-colors">Home</a>
-                    <a href="#stack" class="hover:text-cobalt transition-colors">Tech Stack</a>
-                    <a href="#experience" class="hover:text-cobalt transition-colors">Experience</a>
-                    <a href="#projects" class="hover:text-cobalt transition-colors">Projects</a>
-                    <a href="#certifications" class="hover:text-cobalt transition-colors">Certifications</a>
-                    <a href="#awards" class="hover:text-cobalt transition-colors">Awards</a>
-                    <a href="#contact" class="hover:text-cobalt transition-colors">Contact</a>
+                <a href="#home" class="flex items-center gap-2">
+                    <span class="w-9 h-9 rounded-xl grid place-items-center font-display font-bold text-sm" style="background:linear-gradient(135deg,#6366F1,#22D3EE)">SS</span>
+                    <span class="font-display font-semibold tracking-wide hidden sm:block">Sweata Swagat Panda</span>
+                </a>
+                <div class="hidden md:flex space-x-8 text-sm font-medium">
+                    <a href="#home" class="navlink">Home</a>
+                    <a href="#stack" class="navlink">Stack</a>
+                    <a href="#experience" class="navlink">Experience</a>
+                    <a href="#projects" class="navlink">Projects</a>
+                    <a href="#certifications" class="navlink">Certifications</a>
+                    <a href="#awards" class="navlink">Awards</a>
+                    <a href="#contact" class="navlink">Contact</a>
                 </div>
                 <button id="mobile-menu-btn" class="md:hidden text-gray-300 hover:text-white">
-                    <i class="fas fa-bars text-2xl"></i>
+                    <i class="fas fa-bars text-xl"></i>
                 </button>
             </div>
         </div>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-dark-card border-t border-gray-800">
-            <div class="px-2 pt-2 pb-3 space-y-1">
-                <a href="#home" class="block px-3 py-2 hover:bg-dark-accent rounded-md">Home</a>
-                <a href="#stack" class="block px-3 py-2 hover:bg-dark-accent rounded-md">Tech Stack</a>
-                <a href="#experience" class="block px-3 py-2 hover:bg-dark-accent rounded-md">Experience</a>
-                <a href="#projects" class="block px-3 py-2 hover:bg-dark-accent rounded-md">Projects</a>
-                <a href="#certifications" class="block px-3 py-2 hover:bg-dark-accent rounded-md">Certifications</a>
-                <a href="#awards" class="block px-3 py-2 hover:bg-dark-accent rounded-md">Awards</a>
-                <a href="#contact" class="block px-3 py-2 hover:bg-dark-accent rounded-md">Contact</a>
+        <div id="mobile-menu" class="hidden md:hidden glass border-t border-white/5">
+            <div class="px-4 py-3 space-y-1 text-sm">
+                <a href="#home" class="block px-3 py-2 rounded-lg hover:bg-white/5">Home</a>
+                <a href="#stack" class="block px-3 py-2 rounded-lg hover:bg-white/5">Stack</a>
+                <a href="#experience" class="block px-3 py-2 rounded-lg hover:bg-white/5">Experience</a>
+                <a href="#projects" class="block px-3 py-2 rounded-lg hover:bg-white/5">Projects</a>
+                <a href="#certifications" class="block px-3 py-2 rounded-lg hover:bg-white/5">Certifications</a>
+                <a href="#awards" class="block px-3 py-2 rounded-lg hover:bg-white/5">Awards</a>
+                <a href="#contact" class="block px-3 py-2 rounded-lg hover:bg-white/5">Contact</a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden pt-16">
-        <div class="absolute inset-0 bg-gradient-to-br from-cobalt/10 via-transparent to-teal/10"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center fade-in">
-                <div class="mb-8 floating">
-                    <div class="w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-cobalt to-teal p-1">
-                        <div class="w-full h-full rounded-full bg-dark-bg flex items-center justify-center">
-                            <i class="fas fa-robot text-5xl gradient-text"></i>
-                        </div>
-                    </div>
-                </div>
-                <h1 class="text-5xl md:text-7xl font-bold mb-6">
-                    <span class="gradient-text">Precision-Driven</span><br>
-                    <span class="text-white">Automation Leader</span>
+    <!-- Hero -->
+    <section id="home" class="min-h-screen flex items-center relative pt-24 pb-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="max-w-4xl mx-auto text-center">
+                <h1 class="font-display text-5xl md:text-7xl font-bold leading-tight mb-6 reveal">
+                    <span class="grad">Engineering Quality</span><br>
+                    <span class="text-white">at the Speed of AI</span>
                 </h1>
-                <p class="text-xl md:text-2xl text-gray-400 mb-4 font-light">Sweata Swagat Panda</p>
-                <p class="text-2xl md:text-3xl font-semibold mb-8 gradient-text">
-                    Quality Engineering Automation Specialist with AI Powered Tools
+
+                <p class="text-lg md:text-2xl font-display font-medium text-gray-200 mb-5 reveal">
+                    Sweata Swagat Panda
                 </p>
-                <p class="text-lg md:text-xl text-gray-300 mb-12 max-w-3xl mx-auto">
-                    Scaling quality at speed through AI-powered test automation, strategic CI/CD integration, 
-                    and precision-engineered frameworks that deliver measurable ROI
+                <p class="text-base md:text-lg text-gray-400 mb-4 reveal">
+                    Test Automation Lead &middot; <span class="text-gray-200">Playwright (TypeScript)</span> &amp; <span class="text-gray-200">Tricentis Tosca</span> &middot; AI-Powered Quality Engineering
                 </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                    <a href="#projects" class="px-8 py-4 bg-gradient-to-r from-cobalt to-teal rounded-lg font-semibold hover:shadow-lg hover:shadow-cobalt/50 transition-all transform hover:scale-105">
-                        View Frameworks
+                <p class="text-base md:text-lg text-gray-400 leading-relaxed mb-10 max-w-2xl mx-auto reveal">
+                    7+ years scaling enterprise quality through AI-powered test automation &mdash; leading a
+                    22-member team, architecting dual-stack Playwright and Tosca frameworks, and delivering
+                    <span class="text-white font-semibold">$1.9M+</span> in measurable savings across 250+ client implementations.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16 reveal">
+                    <a href="#projects" class="btn-primary px-7 py-3.5 rounded-xl font-semibold text-white flex items-center gap-2">
+                        <i class="fas fa-layer-group"></i> Explore My Work
                     </a>
-                    <a href="#" id="download-resume" class="px-8 py-4 border-2 border-cobalt rounded-lg font-semibold hover:bg-cobalt/10 transition-all transform hover:scale-105 flex items-center gap-2">
-                        <i class="fas fa-download"></i>
-                        Download Resume
+                    <a href="Sweata-Swagat-Panda-Resume.pdf" download="Sweata Swagat Panda - Resume.pdf" id="download-resume" class="btn-ghost px-7 py-3.5 rounded-xl font-semibold text-gray-100 flex items-center gap-2">
+                        <i class="fas fa-download"></i> Download Resume
                     </a>
+                </div>
+
+                <!-- Impact Stats -->
+                <div class="grid grid-cols-2 md:grid-cols-5 gap-3 md:gap-4 reveal">
+                    <div class="glass glass-hover rounded-2xl p-5">
+                        <div class="font-display text-3xl font-bold grad">7+</div>
+                        <div class="text-xs text-gray-400 mt-1.5">Years Experience</div>
+                    </div>
+                    <div class="glass glass-hover rounded-2xl p-5">
+                        <div class="font-display text-3xl font-bold grad">$1.9M+</div>
+                        <div class="text-xs text-gray-400 mt-1.5">Automation Savings</div>
+                    </div>
+                    <div class="glass glass-hover rounded-2xl p-5">
+                        <div class="font-display text-3xl font-bold grad">3,780+</div>
+                        <div class="text-xs text-gray-400 mt-1.5">Tests Automated</div>
+                    </div>
+                    <div class="glass glass-hover rounded-2xl p-5">
+                        <div class="font-display text-3xl font-bold grad">22</div>
+                        <div class="text-xs text-gray-400 mt-1.5">Team Members Led</div>
+                    </div>
+                    <div class="glass glass-hover rounded-2xl p-5 col-span-2 md:col-span-1">
+                        <div class="font-display text-3xl font-bold grad">250+</div>
+                        <div class="text-xs text-gray-400 mt-1.5">Client Implementations</div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Technical Stack Section -->
-    <section id="stack" class="py-20 bg-dark-card/50">
+    <!-- Tech marquee -->
+    <div class="py-8 border-y border-white/5 marquee">
+        <div class="marquee__track text-gray-500 font-display font-medium text-lg">
+            <span>Playwright</span><span class="text-indigo">&bull;</span><span>TypeScript</span><span class="text-indigo">&bull;</span><span>Tricentis Tosca</span><span class="text-indigo">&bull;</span><span>Pytest</span><span class="text-indigo">&bull;</span><span>Azure DevOps</span><span class="text-indigo">&bull;</span><span>Jenkins</span><span class="text-indigo">&bull;</span><span>GitHub</span><span class="text-indigo">&bull;</span><span>k6</span><span class="text-indigo">&bull;</span><span>MCP / AI Agents</span><span class="text-indigo">&bull;</span><span>Selenium</span><span class="text-indigo">&bull;</span><span>JIRA</span><span class="text-indigo">&bull;</span>
+            <span>Playwright</span><span class="text-indigo">&bull;</span><span>TypeScript</span><span class="text-indigo">&bull;</span><span>Tricentis Tosca</span><span class="text-indigo">&bull;</span><span>Pytest</span><span class="text-indigo">&bull;</span><span>Azure DevOps</span><span class="text-indigo">&bull;</span><span>Jenkins</span><span class="text-indigo">&bull;</span><span>GitHub</span><span class="text-indigo">&bull;</span><span>k6</span><span class="text-indigo">&bull;</span><span>MCP / AI Agents</span><span class="text-indigo">&bull;</span><span>Selenium</span><span class="text-indigo">&bull;</span><span>JIRA</span><span class="text-indigo">&bull;</span>
+        </div>
+    </div>
+
+    <!-- Technical Stack -->
+    <section id="stack" class="py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold mb-4">
-                    <span class="gradient-text">Technical Arsenal</span>
-                </h2>
-                <p class="text-gray-400 text-lg">Mastery across the automation testing ecosystem</p>
+            <div class="text-center mb-14 reveal">
+                <p class="eyebrow grad mb-3">Technical Arsenal</p>
+                <h2 class="text-4xl md:text-5xl font-bold">Tools I <span class="grad">master</span></h2>
+                <p class="text-gray-400 text-lg mt-4">Dual-stack automation across the modern quality-engineering ecosystem</p>
             </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+                <!-- Playwright -->
+                <div class="glass glass-hover rounded-2xl p-6 reveal">
+                    <div class="chip mb-5"><i class="fas fa-bolt text-xl grad"></i></div>
+                    <h3 class="text-lg font-bold mb-1">Playwright</h3>
+                    <p class="text-gray-500 text-sm mb-4">TypeScript, config-driven framework</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="pill px-3 py-1 rounded-full text-xs">TypeScript</span>
+                        <span class="pill px-3 py-1 rounded-full text-xs">Config-Driven</span>
+                        <span class="pill px-3 py-1 rounded-full text-xs">API Testing</span>
+                        <span class="pill px-3 py-1 rounded-full text-xs">Cross-Browser</span>
+                    </div>
+                </div>
                 <!-- Tosca -->
-                <div class="tech-card gradient-border">
-                    <div class="gradient-border-inner p-6 text-center">
-                        <div class="text-5xl mb-4">
-                            <i class="fas fa-vial text-cobalt"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2">Tricentis Tosca</h3>
-                        <p class="text-gray-400 text-sm mb-4">Model-Based Test Automation</p>
-                        <div class="flex flex-wrap gap-2 justify-center">
-                            <span class="skill-pill px-3 py-1 bg-dark-accent rounded-full text-xs">Vision AI</span>
-                            <span class="skill-pill px-3 py-1 bg-dark-accent rounded-full text-xs">API Testing</span>
-                            <span class="skill-pill px-3 py-1 bg-dark-accent rounded-full text-xs">TQL</span>
-                        </div>
+                <div class="glass glass-hover rounded-2xl p-6 reveal">
+                    <div class="chip mb-5"><i class="fas fa-vial text-xl grad"></i></div>
+                    <h3 class="text-lg font-bold mb-1">Tricentis Tosca</h3>
+                    <p class="text-gray-500 text-sm mb-4">Model-based test automation</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="pill px-3 py-1 rounded-full text-xs">Model-Based</span>
+                        <span class="pill px-3 py-1 rounded-full text-xs">Modules/TBox</span>
+                        <span class="pill px-3 py-1 rounded-full text-xs">TQL</span>
+                        <span class="pill px-3 py-1 rounded-full text-xs">Vision AI</span>
                     </div>
                 </div>
-                
-                <!-- Selenium -->
-                <div class="tech-card gradient-border">
-                    <div class="gradient-border-inner p-6 text-center">
-                        <div class="text-5xl mb-4">
-                            <i class="fas fa-code text-teal"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2">Selenium</h3>
-                        <p class="text-gray-400 text-sm mb-4">Web Automation Framework</p>
-                        <div class="flex flex-wrap gap-2 justify-center">
-                            <span class="skill-pill px-3 py-1 bg-dark-accent rounded-full text-xs">Java</span>
-                            <span class="skill-pill px-3 py-1 bg-dark-accent rounded-full text-xs">Python</span>
-                            <span class="skill-pill px-3 py-1 bg-dark-accent rounded-full text-xs">Eclipse</span>
-                        </div>
+                <!-- Pytest -->
+                <div class="glass glass-hover rounded-2xl p-6 reveal">
+                    <div class="chip mb-5"><i class="fab fa-python text-xl grad"></i></div>
+                    <h3 class="text-lg font-bold mb-1">Pytest</h3>
+                    <p class="text-gray-500 text-sm mb-4">Python automation &amp; API</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="pill px-3 py-1 rounded-full text-xs">Python</span>
+                        <span class="pill px-3 py-1 rounded-full text-xs">Requests</span>
+                        <span class="pill px-3 py-1 rounded-full text-xs">Data-Driven</span>
+                        <span class="pill px-3 py-1 rounded-full text-xs">Selenium</span>
                     </div>
                 </div>
-                
-                <!-- Development Tools -->
-                <div class="tech-card gradient-border">
-                    <div class="gradient-border-inner p-6 text-center">
-                        <div class="text-5xl mb-4">
-                            <i class="fas fa-laptop-code text-teal"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2">Development Tools</h3>
-                        <p class="text-gray-400 text-sm mb-4">Modern IDE & Platforms</p>
-                        <div class="flex flex-wrap gap-2 justify-center">
-                            <span class="skill-pill px-3 py-1 bg-dark-accent rounded-full text-xs">VS Code</span>
-                            <span class="skill-pill px-3 py-1 bg-dark-accent rounded-full text-xs">Eclipse</span>
-                            <span class="skill-pill px-3 py-1 bg-dark-accent rounded-full text-xs">Selenium</span>
-                        </div>
-                    </div>
-                </div>
-                
                 <!-- CI/CD -->
-                <div class="tech-card gradient-border">
-                    <div class="gradient-border-inner p-6 text-center">
-                        <div class="text-5xl mb-4">
-                            <i class="fas fa-infinity text-cobalt"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2">CI/CD Pipelines</h3>
-                        <p class="text-gray-400 text-sm mb-4">Continuous Integration & Delivery</p>
-                        <div class="flex flex-wrap gap-2 justify-center">
-                            <span class="skill-pill px-3 py-1 bg-dark-accent rounded-full text-xs">Azure DevOps</span>
-                            <span class="skill-pill px-3 py-1 bg-dark-accent rounded-full text-xs">TestRail</span>
-                            <span class="skill-pill px-3 py-1 bg-dark-accent rounded-full text-xs">ALM</span>
-                        </div>
+                <div class="glass glass-hover rounded-2xl p-6 reveal">
+                    <div class="chip mb-5"><i class="fas fa-infinity text-xl grad"></i></div>
+                    <h3 class="text-lg font-bold mb-1">CI/CD &amp; DevOps</h3>
+                    <p class="text-gray-500 text-sm mb-4">Continuous integration &amp; delivery</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="pill px-3 py-1 rounded-full text-xs">Azure DevOps</span>
+                        <span class="pill px-3 py-1 rounded-full text-xs">Jenkins</span>
+                        <span class="pill px-3 py-1 rounded-full text-xs">GitHub</span>
+                        <span class="pill px-3 py-1 rounded-full text-xs">YAML</span>
+                        <span class="pill px-3 py-1 rounded-full text-xs">Git</span>
                     </div>
                 </div>
-                
-                <!-- Data & Analytics -->
-                <div class="tech-card gradient-border">
-                    <div class="gradient-border-inner p-6 text-center">
-                        <div class="text-5xl mb-4">
-                            <i class="fas fa-database text-teal"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2">Data & Analytics</h3>
-                        <p class="text-gray-400 text-sm mb-4">Testing Intelligence</p>
-                        <div class="flex flex-wrap gap-2 justify-center">
-                            <span class="skill-pill px-3 py-1 bg-dark-accent rounded-full text-xs">SQL</span>
-                            <span class="skill-pill px-3 py-1 bg-dark-accent rounded-full text-xs">Power BI</span>
-                            <span class="skill-pill px-3 py-1 bg-dark-accent rounded-full text-xs">Excel</span>
-                        </div>
+                <!-- API & Performance -->
+                <div class="glass glass-hover rounded-2xl p-6 reveal">
+                    <div class="chip mb-5"><i class="fas fa-gauge-high text-xl grad"></i></div>
+                    <h3 class="text-lg font-bold mb-1">API &amp; Performance</h3>
+                    <p class="text-gray-500 text-sm mb-4">Service &amp; load validation</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="pill px-3 py-1 rounded-full text-xs">Playwright API</span>
+                        <span class="pill px-3 py-1 rounded-full text-xs">Postman</span>
+                        <span class="pill px-3 py-1 rounded-full text-xs">Tosca API</span>
+                        <span class="pill px-3 py-1 rounded-full text-xs">k6</span>
                     </div>
                 </div>
-                
-                <!-- Agentic AI Tools -->
-                <div class="tech-card gradient-border">
-                    <div class="gradient-border-inner p-6 text-center">
-                        <div class="text-5xl mb-4">
-                            <i class="fas fa-brain text-cobalt"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2">Agentic AI Tools</h3>
-                        <p class="text-gray-400 text-sm mb-4">AI-Powered Development</p>
-                        <div class="flex flex-wrap gap-2 justify-center">
-                            <span class="skill-pill px-3 py-1 bg-dark-accent rounded-full text-xs">Kiro AI</span>
-                            <span class="skill-pill px-3 py-1 bg-dark-accent rounded-full text-xs">GitHub Copilot</span>
-                            <span class="skill-pill px-3 py-1 bg-dark-accent rounded-full text-xs">ChatGPT</span>
-                            <span class="skill-pill px-3 py-1 bg-dark-accent rounded-full text-xs">Gemini</span>
-                        </div>
+                <!-- Agentic AI -->
+                <div class="glass glass-hover rounded-2xl p-6 reveal">
+                    <div class="chip mb-5"><i class="fas fa-brain text-xl grad"></i></div>
+                    <h3 class="text-lg font-bold mb-1">Agentic &amp; Gen AI</h3>
+                    <p class="text-gray-500 text-sm mb-4">AI-powered test engineering</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="pill px-3 py-1 rounded-full text-xs">MCP Servers</span>
+                        <span class="pill px-3 py-1 rounded-full text-xs">AI Agents</span>
+                        <span class="pill px-3 py-1 rounded-full text-xs">Kiro AI</span>
+                        <span class="pill px-3 py-1 rounded-full text-xs">GitHub Copilot</span>
+                        <span class="pill px-3 py-1 rounded-full text-xs">Self-Healing</span>
                     </div>
                 </div>
-                
-                <!-- Development Tools -->
-                <div class="tech-card gradient-border">
-                    <div class="gradient-border-inner p-6 text-center">
-                        <div class="text-5xl mb-4">
-                            <i class="fas fa-laptop-code text-teal"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2">Development Tools</h3>
-                        <p class="text-gray-400 text-sm mb-4">Modern IDE & Platforms</p>
-                        <div class="flex flex-wrap gap-2 justify-center">
-                            <span class="skill-pill px-3 py-1 bg-dark-accent rounded-full text-xs">VS Code</span>
-                            <span class="skill-pill px-3 py-1 bg-dark-accent rounded-full text-xs">Eclipse</span>
-                            <span class="skill-pill px-3 py-1 bg-dark-accent rounded-full text-xs">Synops</span>
-                        </div>
+                <!-- Test Mgmt -->
+                <div class="glass glass-hover rounded-2xl p-6 reveal">
+                    <div class="chip mb-5"><i class="fas fa-database text-xl grad"></i></div>
+                    <h3 class="text-lg font-bold mb-1">Test Mgmt &amp; Analytics</h3>
+                    <p class="text-gray-500 text-sm mb-4">Tracking &amp; reporting intelligence</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="pill px-3 py-1 rounded-full text-xs">Azure Test Plans</span>
+                        <span class="pill px-3 py-1 rounded-full text-xs">JIRA</span>
+                        <span class="pill px-3 py-1 rounded-full text-xs">TestRail</span>
+                        <span class="pill px-3 py-1 rounded-full text-xs">ALM</span>
+                        <span class="pill px-3 py-1 rounded-full text-xs">Power BI</span>
+                        <span class="pill px-3 py-1 rounded-full text-xs">SQL</span>
                     </div>
                 </div>
-                
-                <!-- Testing Methodologies -->
-                <div class="tech-card gradient-border">
-                    <div class="gradient-border-inner p-6 text-center">
-                        <div class="text-5xl mb-4">
-                            <i class="fas fa-clipboard-check text-cobalt"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2">Testing Methodologies</h3>
-                        <p class="text-gray-400 text-sm mb-4">Comprehensive Test Coverage</p>
-                        <div class="flex flex-wrap gap-2 justify-center">
-                            <span class="skill-pill px-3 py-1 bg-dark-accent rounded-full text-xs">Accessibility</span>
-                            <span class="skill-pill px-3 py-1 bg-dark-accent rounded-full text-xs">Functional</span>
-                            <span class="skill-pill px-3 py-1 bg-dark-accent rounded-full text-xs">Regression</span>
-                            <span class="skill-pill px-3 py-1 bg-dark-accent rounded-full text-xs">UAT/SIT</span>
-                            <span class="skill-pill px-3 py-1 bg-dark-accent rounded-full text-xs">PAT/SRT</span>
-                            <span class="skill-pill px-3 py-1 bg-dark-accent rounded-full text-xs">UI/UX</span>
-                        </div>
+                <!-- Methodologies -->
+                <div class="glass glass-hover rounded-2xl p-6 reveal">
+                    <div class="chip mb-5"><i class="fas fa-clipboard-check text-xl grad"></i></div>
+                    <h3 class="text-lg font-bold mb-1">Methodologies</h3>
+                    <p class="text-gray-500 text-sm mb-4">Comprehensive test coverage</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="pill px-3 py-1 rounded-full text-xs">Functional</span>
+                        <span class="pill px-3 py-1 rounded-full text-xs">Regression</span>
+                        <span class="pill px-3 py-1 rounded-full text-xs">Accessibility (axe/WCAG)</span>
+                        <span class="pill px-3 py-1 rounded-full text-xs">UAT/SIT</span>
+                        <span class="pill px-3 py-1 rounded-full text-xs">Risk-Based</span>
                     </div>
                 </div>
             </div>
-            
-            <!-- Additional Skills -->
-            <div class="mt-12 text-center">
-                <h3 class="text-2xl font-bold mb-6 gradient-text">Extended Capabilities</h3>
+
+            <div class="mt-10 text-center reveal">
+                <p class="text-gray-500 text-sm mb-4 font-display tracking-wide">EXTENDED CAPABILITIES</p>
                 <div class="flex flex-wrap gap-3 justify-center max-w-4xl mx-auto">
-                    <span class="skill-pill px-4 py-2 bg-dark-card rounded-full border border-gray-700">Postman API Testing</span>
-                    <span class="skill-pill px-4 py-2 bg-dark-card rounded-full border border-gray-700">Perfecto Mobile Testing</span>
-                    <span class="skill-pill px-4 py-2 bg-dark-card rounded-full border border-gray-700">Automation Anywhere</span>
-                    <span class="skill-pill px-4 py-2 bg-dark-card rounded-full border border-gray-700">Agile/Scrum</span>
-                    <span class="skill-pill px-4 py-2 bg-dark-card rounded-full border border-gray-700">Product Testing</span>
-                    <span class="skill-pill px-4 py-2 bg-dark-card rounded-full border border-gray-700">Gen AI Integration</span>
-                    <span class="skill-pill px-4 py-2 bg-dark-card rounded-full border border-gray-700">Agentic AI Workflows</span>
+                    <span class="pill px-4 py-2 rounded-full text-sm">Selenium WebDriver</span>
+                    <span class="pill px-4 py-2 rounded-full text-sm">Page Object Model</span>
+                    <span class="pill px-4 py-2 rounded-full text-sm">BDD</span>
+                    <span class="pill px-4 py-2 rounded-full text-sm">Shift-Left</span>
+                    <span class="pill px-4 py-2 rounded-full text-sm">Agile/Scrum</span>
+                    <span class="pill px-4 py-2 rounded-full text-sm">Perfecto Mobile</span>
+                    <span class="pill px-4 py-2 rounded-full text-sm">Automation Anywhere</span>
+                    <span class="pill px-4 py-2 rounded-full text-sm">Gen AI Integration</span>
+                    <span class="pill px-4 py-2 rounded-full text-sm">Agentic AI Workflows</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Experience Timeline Section -->
-    <section id="experience" class="py-20">
+    <!-- Experience -->
+    <section id="experience" class="py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold mb-4">
-                    <span class="gradient-text">Career Journey</span>
-                </h2>
-                <p class="text-gray-400 text-lg">6+ Years of Excellence in Quality Engineering</p>
+            <div class="text-center mb-14 reveal">
+                <p class="eyebrow grad mb-3">Career Journey</p>
+                <h2 class="text-4xl md:text-5xl font-bold">7+ years of <span class="grad">quality leadership</span></h2>
             </div>
-            
-            <div class="max-w-4xl mx-auto">
-                <!-- Timeline -->
-                <div class="relative border-l-2 border-gray-700 ml-4">
-                    
-                    <!-- Accenture -->
-                    <div class="timeline-item relative pl-8 pb-12">
-                        <div class="mb-4">
-                            <span class="px-4 py-1 bg-gradient-to-r from-cobalt to-teal rounded-full text-sm font-semibold">
-                                2019 - Present
-                            </span>
+
+            <div class="max-w-4xl mx-auto reveal">
+                <div class="relative border-l border-white/10 ml-3 pl-8">
+                    <div class="tl-dot relative">
+                        <div class="mb-4 flex flex-wrap items-center gap-3">
+                            <span class="glass rounded-full px-4 py-1 text-sm font-semibold text-white">2019 &ndash; Present</span>
+                            <span class="text-gray-500 text-sm">Bangalore, India</span>
                         </div>
-                        <div class="bg-dark-card p-6 rounded-lg border border-gray-700 hover:border-cobalt transition-all">
-                            <h3 class="text-2xl font-bold mb-2">Quality Engineering Specialist</h3>
-                            <p class="text-teal font-semibold mb-4">Accenture India Pvt Ltd.</p>
-                            <ul class="space-y-3 text-gray-300">
-                                <li class="flex items-start">
-                                    <i class="fas fa-check-circle text-cobalt mt-1 mr-3"></i>
-                                    <span>Spearheaded end-to-end testing for AI-powered Procure-to-Pay (P2P) and Record-to-Report (R2R) solutions using Gen AI and Agentic AI</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check-circle text-cobalt mt-1 mr-3"></i>
-                                    <span>Delivered 250+ client implementations for AP/AR tools and reconciliation systems with seamless ERP integration</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check-circle text-cobalt mt-1 mr-3"></i>
-                                    <span>Designed test strategies (SIT/UAT) and led cross-functional teams executing automated test suites (Tosca/Selenium) within Azure DevOps</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check-circle text-cobalt mt-1 mr-3"></i>
-                                    <span>Established CI/CD pipelines using multi-VDI environments, accelerating release cycles while maintaining SLA compliance</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check-circle text-cobalt mt-1 mr-3"></i>
-                                    <span>Developed Power BI dashboards and Automation Bots to streamline analytical reporting</span>
-                                </li>
+                        <div class="glass glass-hover rounded-2xl p-7">
+                            <h3 class="text-2xl font-bold">Automation Test Lead</h3>
+                            <p class="grad font-display font-semibold mb-3">Accenture India Pvt. Ltd.</p>
+                            <p class="text-gray-500 text-sm mb-6">
+                                Progression: Associate (2019) <span class="text-indigo">&rarr;</span> Analyst (2021)
+                                <span class="text-indigo">&rarr;</span> Senior Analyst (2022) <span class="text-indigo">&rarr;</span> Automation Test Lead (2025)
+                            </p>
+                            <ul class="space-y-3.5 text-gray-300">
+                                <li class="flex items-start gap-3"><i class="fas fa-circle-check text-indigo mt-1.5 text-sm"></i><span>Lead a <span class="text-white font-medium">22-member automation team</span> (11 direct mentees, 6 promoted); own hiring (100+ interviews), performance management, and capability building across AI-powered P2P, R2R, and O2C platforms</span></li>
+                                <li class="flex items-start gap-3"><i class="fas fa-circle-check text-indigo mt-1.5 text-sm"></i><span>Architected <span class="text-white font-medium">dual-stack frameworks</span> &mdash; Playwright (TypeScript, config-driven) and Tricentis Tosca (model-based) &mdash; automating <span class="text-white font-medium">3,780+ of 4,900+ test cases (~77%)</span> and cutting test cycles 50&ndash;70%</span></li>
+                                <li class="flex items-start gap-3"><i class="fas fa-circle-check text-indigo mt-1.5 text-sm"></i><span>Delivered <span class="text-white font-medium">$1.9M+ in automation-led savings</span> across 250+ client implementations; influence delivery budgets and own the product-testing phase, tracked via Power BI ROI dashboards</span></li>
+                                <li class="flex items-start gap-3"><i class="fas fa-circle-check text-indigo mt-1.5 text-sm"></i><span>Pioneered AI-augmented testing using <span class="text-white font-medium">MCP (Model Context Protocol) servers</span>, AI agents, and self-healing locators across the Automation Development Life Cycle (ADLC)</span></li>
+                                <li class="flex items-start gap-3"><i class="fas fa-circle-check text-indigo mt-1.5 text-sm"></i><span>Built CI/CD governance on Azure DevOps (YAML, multi-VDI) and Jenkins/GitHub; surfaced <span class="text-white font-medium">11,000+ defects</span> and reduced post-release defect leakage by ~30%</span></li>
+                                <li class="flex items-start gap-3"><i class="fas fa-circle-check text-indigo mt-1.5 text-sm"></i><span>Defined SIT/UAT strategy with Operations and client teams; present automation ROI and quality dashboards through steering committees and leadership reviews</span></li>
                             </ul>
                         </div>
                     </div>
-                    
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Showcase Section -->
-    <section id="projects" class="py-20 bg-dark-card/50">
+    <!-- Projects -->
+    <section id="projects" class="py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold mb-4">
-                    <span class="gradient-text">Project Showcase</span>
-                </h2>
-                <p class="text-gray-400 text-lg">Enterprise-grade automation frameworks and solutions</p>
+            <div class="text-center mb-14 reveal">
+                <p class="eyebrow grad mb-3">Project Showcase</p>
+                <h2 class="text-4xl md:text-5xl font-bold">Programs with <span class="grad">measurable impact</span></h2>
             </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                
-                <!-- Project 1 -->
-                <div class="project-card rounded-xl p-6 border border-gray-700 hover:border-cobalt">
-                    <div class="text-4xl mb-4 text-cobalt">
-                        <i class="fas fa-file-invoice-dollar"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Invoice to Pay (I2P)</h3>
-                    <p class="text-gray-400 mb-4">AI-powered invoice processing automation using Agentic AI for intelligent document handling and reconciliation</p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="px-3 py-1 bg-dark-accent rounded-full text-xs">Agentic AI</span>
-                        <span class="px-3 py-1 bg-dark-accent rounded-full text-xs">Tosca</span>
-                        <span class="px-3 py-1 bg-dark-accent rounded-full text-xs">API Testing</span>
-                    </div>
-                </div>
-                
-                <!-- Project 2 -->
-                <div class="project-card rounded-xl p-6 border border-gray-700 hover:border-teal">
-                    <div class="text-4xl mb-4 text-teal">
-                        <i class="fas fa-money-check-alt"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Automated Account Payable (AAP)</h3>
-                    <p class="text-gray-400 mb-4">Gen AI-powered automation for accounts payable workflows with intelligent task management and processing</p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="px-3 py-1 bg-dark-accent rounded-full text-xs">Gen AI</span>
-                        <span class="px-3 py-1 bg-dark-accent rounded-full text-xs">Selenium</span>
-                        <span class="px-3 py-1 bg-dark-accent rounded-full text-xs">Azure DevOps</span>
-                    </div>
-                </div>
-                
-                <!-- Project 3 -->
-                <div class="project-card rounded-xl p-6 border border-gray-700 hover:border-cobalt">
-                    <div class="text-4xl mb-4 text-cobalt">
-                        <i class="fas fa-balance-scale"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">ReconSmart PC & Reconciliation</h3>
-                    <p class="text-gray-400 mb-4">Comprehensive reconciliation system ensuring seamless integration with SAP, Oracle, and third-party ERP platforms</p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="px-3 py-1 bg-dark-accent rounded-full text-xs">ERP Integration</span>
-                        <span class="px-3 py-1 bg-dark-accent rounded-full text-xs">SQL</span>
-                        <span class="px-3 py-1 bg-dark-accent rounded-full text-xs">Power BI</span>
-                    </div>
-                </div>
-                
-                <!-- Project 4 -->
-                <div class="project-card rounded-xl p-6 border border-gray-700 hover:border-teal">
-                    <div class="text-4xl mb-4 text-teal">
-                        <i class="fas fa-exchange-alt"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Tradeshift Invoice Processing</h3>
-                    <p class="text-gray-400 mb-4">Automated invoice processing framework with advanced validation and compliance checking mechanisms</p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="px-3 py-1 bg-dark-accent rounded-full text-xs">Tosca</span>
-                        <span class="px-3 py-1 bg-dark-accent rounded-full text-xs">API Automation</span>
-                        <span class="px-3 py-1 bg-dark-accent rounded-full text-xs">CI/CD</span>
-                    </div>
-                </div>
-                
-                <!-- Project 5 -->
-                <div class="project-card rounded-xl p-6 border border-gray-700 hover:border-cobalt">
-                    <div class="text-4xl mb-4 text-cobalt">
-                        <i class="fas fa-building"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Cevinio & MSP</h3>
-                    <p class="text-gray-400 mb-4">Enterprise management solutions with comprehensive test automation coverage for functional and regression testing</p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="px-3 py-1 bg-dark-accent rounded-full text-xs">Regression Testing</span>
-                        <span class="px-3 py-1 bg-dark-accent rounded-full text-xs">TestRail</span>
-                        <span class="px-3 py-1 bg-dark-accent rounded-full text-xs">Agile</span>
-                    </div>
-                </div>
-                
-                <!-- Project 6 -->
-                <div class="project-card rounded-xl p-6 border border-gray-700 hover:border-teal">
-                    <div class="text-4xl mb-4 text-teal">
-                        <i class="fas fa-file-alt"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Document Flow Manager (DFM) & ATCAT</h3>
-                    <p class="text-gray-400 mb-4">Advanced document management and automated testing frameworks for complex enterprise workflows</p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="px-3 py-1 bg-dark-accent rounded-full text-xs">Automation</span>
-                        <span class="px-3 py-1 bg-dark-accent rounded-full text-xs">Document Processing</span>
-                        <span class="px-3 py-1 bg-dark-accent rounded-full text-xs">ALM</span>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-    </section>
-    
-    <!-- Test Strategy Section -->
-    <section id="strategy" class="py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold mb-4">
-                    <span class="gradient-text">Leadership Philosophy</span>
-                </h2>
-                <p class="text-gray-400 text-lg">Strategic approach to quality engineering excellence</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-                
-                <!-- Shift-Left Testing -->
-                <div class="bg-dark-card p-8 rounded-xl border border-gray-700 hover:border-cobalt transition-all">
-                    <div class="text-5xl mb-6 text-cobalt">
-                        <i class="fas fa-arrow-left"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Shift-Left Testing</h3>
-                    <p class="text-gray-300 leading-relaxed">
-                        Embedding quality from the earliest stages of development. By integrating testing into the design and development phases, 
-                        we identify defects early, reduce costs, and accelerate delivery timelines while maintaining rigorous quality standards.
-                    </p>
-                </div>
-                
-                <!-- ROI in Automation -->
-                <div class="bg-dark-card p-8 rounded-xl border border-gray-700 hover:border-teal transition-all">
-                    <div class="text-5xl mb-6 text-teal">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">ROI-Driven Automation</h3>
-                    <p class="text-gray-300 leading-relaxed">
-                        Strategic automation that delivers measurable business value. Focus on high-impact test scenarios, 
-                        optimize test execution time, and leverage AI-powered tools to maximize return on investment while 
-                        ensuring comprehensive coverage and reliability.
-                    </p>
-                </div>
-                
-                <!-- Continuous Integration -->
-                <div class="bg-dark-card p-8 rounded-xl border border-gray-700 hover:border-cobalt transition-all">
-                    <div class="text-5xl mb-6 text-cobalt">
-                        <i class="fas fa-sync-alt"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">CI/CD Excellence</h3>
-                    <p class="text-gray-300 leading-relaxed">
-                        Building robust pipelines that enable rapid, reliable releases. Automated test suites integrated into 
-                        multi-VDI environments ensure continuous validation, maintaining SLA compliance while accelerating 
-                        time-to-market for critical business applications.
-                    </p>
-                </div>
-                
-                <!-- Cross-Functional Leadership -->
-                <div class="bg-dark-card p-8 rounded-xl border border-gray-700 hover:border-teal transition-all">
-                    <div class="text-5xl mb-6 text-teal">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Cross-Functional Leadership</h3>
-                    <p class="text-gray-300 leading-relaxed">
-                        Orchestrating collaboration between development, operations, and business teams. Leading test strategy 
-                        design, mentoring team members, and aligning testing phases with Agile/Scrum methodologies to ensure 
-                        seamless project delivery and stakeholder satisfaction.
-                    </p>
-                </div>
-                
-            </div>
-        </div>
-    </section>
 
-    <!-- Certifications Section -->
-    <section id="certifications" class="py-20 bg-dark-card/50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold mb-4">
-                    <span class="gradient-text">Certifications</span>
-                </h2>
-                <p class="text-gray-400 text-lg">Industry-recognized expertise and credentials</p>
-            </div>
-            
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                
-                <!-- Cert 1 -->
-                <div class="cert-badge bg-dark-card p-6 rounded-xl border-2 border-gray-700 hover:border-cobalt">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-gradient-to-br from-cobalt to-teal rounded-lg flex items-center justify-center mr-4">
-                            <i class="fas fa-certificate text-white text-xl"></i>
-                        </div>
-                        <div>
-                            <h3 class="font-bold text-lg">Tosca Automation Engineering 1</h3>
-                        </div>
+                <!-- I2P -->
+                <div class="project glass glass-hover rounded-2xl p-6 reveal">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="chip"><i class="fas fa-file-invoice-dollar text-xl grad"></i></div>
+                        <span class="text-xs text-gray-500 font-display">13 clients</span>
                     </div>
-                    <p class="text-gray-400 text-sm">Tricentis Certified Professional</p>
-                </div>
-                
-                <!-- Cert 2 -->
-                <div class="cert-badge bg-dark-card p-6 rounded-xl border-2 border-gray-700 hover:border-teal">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-gradient-to-br from-teal to-cobalt rounded-lg flex items-center justify-center mr-4">
-                            <i class="fas fa-certificate text-white text-xl"></i>
-                        </div>
-                        <div>
-                            <h3 class="font-bold text-lg">Tosca Test Design & Automation Specialist 1 & 2</h3>
-                        </div>
+                    <h3 class="text-lg font-bold mb-2">Invoice-to-Pay (I2P)</h3>
+                    <p class="text-gray-400 text-sm mb-4">Agentic-AI invoice-processing platform (17 autonomous agents). Led functional, regression, and ERP-integration testing.</p>
+                    <div class="grid grid-cols-3 gap-2 mb-4 text-center">
+                        <div class="glass rounded-lg py-2"><div class="grad font-display font-bold text-sm">1,320</div><div class="text-[10px] text-gray-500">automated</div></div>
+                        <div class="glass rounded-lg py-2"><div class="grad font-display font-bold text-sm">2mo&rarr;3wk</div><div class="text-[10px] text-gray-500">cycle</div></div>
+                        <div class="glass rounded-lg py-2"><div class="grad font-display font-bold text-sm">$300K</div><div class="text-[10px] text-gray-500">saved</div></div>
                     </div>
-                    <p class="text-gray-400 text-sm">Advanced Test Design Certification</p>
-                </div>
-                
-                <!-- Cert 3 -->
-                <div class="cert-badge bg-dark-card p-6 rounded-xl border-2 border-gray-700 hover:border-cobalt">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-gradient-to-br from-cobalt to-teal rounded-lg flex items-center justify-center mr-4">
-                            <i class="fas fa-certificate text-white text-xl"></i>
-                        </div>
-                        <div>
-                            <h3 class="font-bold text-lg">Tosca Query Language</h3>
-                        </div>
-                    </div>
-                    <p class="text-gray-400 text-sm">TQL Specialist Certification</p>
-                </div>
-                
-                <!-- Cert 4 -->
-                <div class="cert-badge bg-dark-card p-6 rounded-xl border-2 border-gray-700 hover:border-teal">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-gradient-to-br from-teal to-cobalt rounded-lg flex items-center justify-center mr-4">
-                            <i class="fas fa-certificate text-white text-xl"></i>
-                        </div>
-                        <div>
-                            <h3 class="font-bold text-lg">Tosca Exploratory Testing Specialist</h3>
-                        </div>
-                    </div>
-                    <p class="text-gray-400 text-sm">Exploratory Testing Expert</p>
-                </div>
-                
-                <!-- Cert 5 -->
-                <div class="cert-badge bg-dark-card p-6 rounded-xl border-2 border-gray-700 hover:border-cobalt">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-gradient-to-br from-cobalt to-teal rounded-lg flex items-center justify-center mr-4">
-                            <i class="fas fa-certificate text-white text-xl"></i>
-                        </div>
-                        <div>
-                            <h3 class="font-bold text-lg">Tosca qTest & API Automation Specialist</h3>
-                        </div>
-                    </div>
-                    <p class="text-gray-400 text-sm">API Testing & qTest Integration</p>
-                </div>
-                
-                <!-- Cert 6 -->
-                <div class="cert-badge bg-dark-card p-6 rounded-xl border-2 border-gray-700 hover:border-teal">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-gradient-to-br from-teal to-cobalt rounded-lg flex items-center justify-center mr-4">
-                            <i class="fas fa-certificate text-white text-xl"></i>
-                        </div>
-                        <div>
-                            <h3 class="font-bold text-lg">Microsoft PL900 & AZ500</h3>
-                        </div>
-                    </div>
-                    <p class="text-gray-400 text-sm">Power Platform & Azure Security</p>
-                </div>
-                
-                <!-- Cert 7 -->
-                <div class="cert-badge bg-dark-card p-6 rounded-xl border-2 border-gray-700 hover:border-cobalt">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-gradient-to-br from-cobalt to-teal rounded-lg flex items-center justify-center mr-4">
-                            <i class="fas fa-certificate text-white text-xl"></i>
-                        </div>
-                        <div>
-                            <h3 class="font-bold text-lg">Java & Python Programming</h3>
-                        </div>
-                    </div>
-                    <p class="text-gray-400 text-sm">Programming Language Proficiency</p>
-                </div>
-                
-                <!-- Cert 8 -->
-                <div class="cert-badge bg-dark-card p-6 rounded-xl border-2 border-gray-700 hover:border-teal">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-gradient-to-br from-teal to-cobalt rounded-lg flex items-center justify-center mr-4">
-                            <i class="fas fa-certificate text-white text-xl"></i>
-                        </div>
-                        <div>
-                            <h3 class="font-bold text-lg">Information Security - Elite Advocate</h3>
-                        </div>
-                    </div>
-                    <p class="text-gray-400 text-sm">Security Best Practices & Compliance</p>
-                </div>
-                
-            </div>
-        </div>
-    </section>
-    
-    <!-- Awards & Recognition Section -->
-    <section id="awards" class="py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold mb-4">
-                    <span class="gradient-text">Awards & Recognition</span>
-                </h2>
-                <p class="text-gray-400 text-lg">Excellence recognized by industry leaders</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                
-                <!-- Award 1 -->
-                <div class="award-shine bg-gradient-to-br from-dark-card to-dark-accent p-6 rounded-xl border border-gray-700 hover:border-yellow-500 transition-all transform hover:scale-105">
-                    <div class="text-5xl mb-4 text-yellow-500">
-                        <i class="fas fa-trophy"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">TechStar Award</h3>
-                    <p class="text-gray-400 text-sm mb-2">Accenture</p>
-                    <p class="text-teal font-semibold">2022</p>
-                </div>
-                
-                <!-- Award 2 -->
-                <div class="award-shine bg-gradient-to-br from-dark-card to-dark-accent p-6 rounded-xl border border-gray-700 hover:border-yellow-500 transition-all transform hover:scale-105">
-                    <div class="text-5xl mb-4 text-yellow-500">
-                        <i class="fas fa-award"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">ACE Award</h3>
-                    <p class="text-gray-400 text-sm mb-2">Accenture</p>
-                    <p class="text-teal font-semibold">2021 & 2024</p>
-                </div>
-                
-                <!-- Award 3 -->
-                <div class="award-shine bg-gradient-to-br from-dark-card to-dark-accent p-6 rounded-xl border border-gray-700 hover:border-yellow-500 transition-all transform hover:scale-105">
-                    <div class="text-5xl mb-4 text-yellow-500">
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Sparkling Star Award</h3>
-                    <p class="text-gray-400 text-sm mb-2">Accenture</p>
-                    <p class="text-teal font-semibold">2022, 2023, 2024</p>
-                </div>
-                
-                <!-- Award 4 -->
-                <div class="award-shine bg-gradient-to-br from-dark-card to-dark-accent p-6 rounded-xl border border-gray-700 hover:border-yellow-500 transition-all transform hover:scale-105">
-                    <div class="text-5xl mb-4 text-yellow-500">
-                        <i class="fas fa-medal"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Tosca Community Award</h3>
-                    <p class="text-gray-400 text-sm mb-2">Tricentis</p>
-                    <p class="text-teal font-semibold">2024</p>
-                </div>
-                
-            </div>
-        </div>
-    </section>
-    
-    <!-- Education Section -->
-    <section id="education" class="py-20 bg-dark-card/50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold mb-4">
-                    <span class="gradient-text">Education</span>
-                </h2>
-                <p class="text-gray-400 text-lg">Academic foundation and continuous learning</p>
-            </div>
-            
-            <div class="max-w-4xl mx-auto space-y-6">
-                
-                <!-- Education 1 -->
-                <div class="bg-dark-card p-6 rounded-xl border border-gray-700 hover:border-cobalt transition-all">
-                    <div class="flex flex-col md:flex-row md:items-center md:justify-between">
-                        <div class="mb-4 md:mb-0">
-                            <h3 class="text-xl font-bold mb-2">Executive General Business Management</h3>
-                            <p class="text-gray-400">Indian Institute of Management Calcutta, Kolkata</p>
-                        </div>
-                        <div class="text-teal font-semibold">
-                            2022 - 2023
-                        </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="pill px-2.5 py-1 rounded-full text-xs">Playwright + TS</span>
+                        <span class="pill px-2.5 py-1 rounded-full text-xs">Agentic AI</span>
+                        <span class="pill px-2.5 py-1 rounded-full text-xs">Azure DevOps</span>
+                        <span class="pill px-2.5 py-1 rounded-full text-xs">k6</span>
                     </div>
                 </div>
-                
-                <!-- Education 2 -->
-                <div class="bg-dark-card p-6 rounded-xl border border-gray-700 hover:border-cobalt transition-all">
-                    <div class="flex flex-col md:flex-row md:items-center md:justify-between">
-                        <div class="mb-4 md:mb-0">
-                            <h3 class="text-xl font-bold mb-2">Bachelor of Technology</h3>
-                            <p class="text-gray-400">Electronics and Electrical Engineering, KIIT University, Bhubaneswar</p>
-                        </div>
-                        <div class="text-teal font-semibold">
-                            2015 - 2019
-                        </div>
+                <!-- AAP -->
+                <div class="project glass glass-hover rounded-2xl p-6 reveal">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="chip"><i class="fas fa-money-check-dollar text-xl grad"></i></div>
+                        <span class="text-xs text-gray-500 font-display">22 clients</span>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">Automated Accounts Payable (AAP)</h3>
+                    <p class="text-gray-400 text-sm mb-4">Gen-AI platform automating GL coding and PO mapping. Owned integration testing across 22 client landscapes.</p>
+                    <div class="grid grid-cols-3 gap-2 mb-4 text-center">
+                        <div class="glass rounded-lg py-2"><div class="grad font-display font-bold text-sm">1,400</div><div class="text-[10px] text-gray-500">automated</div></div>
+                        <div class="glass rounded-lg py-2"><div class="grad font-display font-bold text-sm">7&rarr;2wk</div><div class="text-[10px] text-gray-500">cycle</div></div>
+                        <div class="glass rounded-lg py-2"><div class="grad font-display font-bold text-sm">$575K</div><div class="text-[10px] text-gray-500">saved</div></div>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="pill px-2.5 py-1 rounded-full text-xs">Playwright + TS</span>
+                        <span class="pill px-2.5 py-1 rounded-full text-xs">Gen AI</span>
+                        <span class="pill px-2.5 py-1 rounded-full text-xs">Jenkins + GitHub</span>
+                        <span class="pill px-2.5 py-1 rounded-full text-xs">k6</span>
                     </div>
                 </div>
-                
-                <!-- Education 3 -->
-                <div class="bg-dark-card p-6 rounded-xl border border-gray-700 hover:border-cobalt transition-all">
-                    <div class="flex flex-col md:flex-row md:items-center md:justify-between">
-                        <div class="mb-4 md:mb-0">
-                            <h3 class="text-xl font-bold mb-2">12th Science CHSE</h3>
-                            <p class="text-gray-400">KIIT Science College, Bhubaneswar</p>
-                        </div>
-                        <div class="text-teal font-semibold">
-                            2013 - 2015
-                        </div>
+                <!-- ReconSmart -->
+                <div class="project glass glass-hover rounded-2xl p-6 reveal">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="chip"><i class="fas fa-scale-balanced text-xl grad"></i></div>
+                        <span class="text-xs text-gray-500 font-display">120+ clients</span>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">ReconSmart &amp; Reconciliation (R2R)</h3>
+                    <p class="text-gray-400 text-sm mb-4">Highest-volume program. Drove functional, data-validation, and reconciliation testing with SAP/Oracle/ERP integration.</p>
+                    <div class="grid grid-cols-3 gap-2 mb-4 text-center">
+                        <div class="glass rounded-lg py-2"><div class="grad font-display font-bold text-sm">600</div><div class="text-[10px] text-gray-500">automated</div></div>
+                        <div class="glass rounded-lg py-2"><div class="grad font-display font-bold text-sm">2&rarr;1wk</div><div class="text-[10px] text-gray-500">cycle</div></div>
+                        <div class="glass rounded-lg py-2"><div class="grad font-display font-bold text-sm">$600K</div><div class="text-[10px] text-gray-500">saved</div></div>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="pill px-2.5 py-1 rounded-full text-xs">Tricentis Tosca</span>
+                        <span class="pill px-2.5 py-1 rounded-full text-xs">Model-Based</span>
+                        <span class="pill px-2.5 py-1 rounded-full text-xs">Jenkins + GitHub</span>
+                        <span class="pill px-2.5 py-1 rounded-full text-xs">JIRA</span>
                     </div>
                 </div>
-                
-                <!-- Education 4 -->
-                <div class="bg-dark-card p-6 rounded-xl border border-gray-700 hover:border-cobalt transition-all">
-                    <div class="flex flex-col md:flex-row md:items-center md:justify-between">
-                        <div class="mb-4 md:mb-0">
-                            <h3 class="text-xl font-bold mb-2">10th ICSE</h3>
-                            <p class="text-gray-400">Vimala Convent School, Bhawanipatna</p>
-                        </div>
-                        <div class="text-teal font-semibold">
-                            2000 - 2013
-                        </div>
+                <!-- DFM -->
+                <div class="project glass glass-hover rounded-2xl p-6 reveal">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="chip"><i class="fas fa-file-lines text-xl grad"></i></div>
+                        <span class="text-xs text-gray-500 font-display">40+ clients</span>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">Document Flow Manager (DFM)</h3>
+                    <p class="text-gray-400 text-sm mb-4">Legacy invoice-processing platform. Led regression and document-flow validation with model-based automation.</p>
+                    <div class="grid grid-cols-3 gap-2 mb-4 text-center">
+                        <div class="glass rounded-lg py-2"><div class="grad font-display font-bold text-sm">180</div><div class="text-[10px] text-gray-500">automated</div></div>
+                        <div class="glass rounded-lg py-2"><div class="grad font-display font-bold text-sm">1wk&rarr;3d</div><div class="text-[10px] text-gray-500">cycle</div></div>
+                        <div class="glass rounded-lg py-2"><div class="grad font-display font-bold text-sm">$150K</div><div class="text-[10px] text-gray-500">saved</div></div>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="pill px-2.5 py-1 rounded-full text-xs">Tricentis Tosca</span>
+                        <span class="pill px-2.5 py-1 rounded-full text-xs">Model-Based</span>
+                        <span class="pill px-2.5 py-1 rounded-full text-xs">Jenkins + GitHub</span>
                     </div>
                 </div>
-                
+                <!-- MSP -->
+                <div class="project glass glass-hover rounded-2xl p-6 reveal">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="chip"><i class="fas fa-building text-xl grad"></i></div>
+                        <span class="text-xs text-gray-500 font-display">30+ clients</span>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">MSP &mdash; Vendor Invoice Generation</h3>
+                    <p class="text-gray-400 text-sm mb-4">Vendor-side invoice-generation platform. Executed model-based functional and integration testing.</p>
+                    <div class="grid grid-cols-3 gap-2 mb-4 text-center">
+                        <div class="glass rounded-lg py-2"><div class="grad font-display font-bold text-sm">180</div><div class="text-[10px] text-gray-500">automated</div></div>
+                        <div class="glass rounded-lg py-2"><div class="grad font-display font-bold text-sm">1wk&rarr;3d</div><div class="text-[10px] text-gray-500">cycle</div></div>
+                        <div class="glass rounded-lg py-2"><div class="grad font-display font-bold text-sm">$150K</div><div class="text-[10px] text-gray-500">saved</div></div>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="pill px-2.5 py-1 rounded-full text-xs">Tricentis Tosca</span>
+                        <span class="pill px-2.5 py-1 rounded-full text-xs">Model-Based</span>
+                        <span class="pill px-2.5 py-1 rounded-full text-xs">Azure DevOps</span>
+                    </div>
+                </div>
+                <!-- ATCAT -->
+                <div class="project glass glass-hover rounded-2xl p-6 reveal">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="chip"><i class="fas fa-copy text-xl grad"></i></div>
+                        <span class="text-xs text-gray-500 font-display">15 clients</span>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">ATCAT &mdash; Duplicate Invoice Detection</h3>
+                    <p class="text-gray-400 text-sm mb-4">Detects duplicate invoices and routes them for approval/rejection. Validated detection accuracy and routing logic.</p>
+                    <div class="grid grid-cols-3 gap-2 mb-4 text-center">
+                        <div class="glass rounded-lg py-2"><div class="grad font-display font-bold text-sm">100</div><div class="text-[10px] text-gray-500">automated</div></div>
+                        <div class="glass rounded-lg py-2"><div class="grad font-display font-bold text-sm">1wk&rarr;3d</div><div class="text-[10px] text-gray-500">cycle</div></div>
+                        <div class="glass rounded-lg py-2"><div class="grad font-display font-bold text-sm">$200K</div><div class="text-[10px] text-gray-500">saved</div></div>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="pill px-2.5 py-1 rounded-full text-xs">Tricentis Tosca</span>
+                        <span class="pill px-2.5 py-1 rounded-full text-xs">Model-Based</span>
+                        <span class="pill px-2.5 py-1 rounded-full text-xs">Azure DevOps</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-20">
+    <!-- Leadership Philosophy -->
+    <section id="strategy" class="py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold mb-4">
-                    <span class="gradient-text">Get In Touch</span>
-                </h2>
-                <p class="text-gray-400 text-lg">Let's discuss how precision-driven automation can transform your quality engineering</p>
+            <div class="text-center mb-14 reveal">
+                <p class="eyebrow grad mb-3">Leadership Philosophy</p>
+                <h2 class="text-4xl md:text-5xl font-bold">How I <span class="grad">build quality</span></h2>
             </div>
-            
-            <div class="max-w-3xl mx-auto">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    
-                    <!-- Email -->
-                    <div class="bg-dark-card p-8 rounded-xl border border-gray-700 hover:border-cobalt transition-all text-center">
-                        <div class="text-5xl mb-4 text-cobalt">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-3">Email</h3>
-                        <a href="mailto:s.swagatpanda@gmail.com" class="text-gray-400 hover:text-teal transition-colors">
-                            s.swagatpanda@gmail.com
-                        </a>
-                    </div>
-                    
-                    <!-- Phone -->
-                    <div class="bg-dark-card p-8 rounded-xl border border-gray-700 hover:border-teal transition-all text-center">
-                        <div class="text-5xl mb-4 text-teal">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-3">Phone</h3>
-                        <a href="tel:+919778632345" class="text-gray-400 hover:text-cobalt transition-colors">
-                            +91 9778632345
-                        </a>
-                    </div>
-                    
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+                <div class="glass glass-hover rounded-2xl p-8 reveal">
+                    <div class="chip mb-5"><i class="fas fa-arrow-left-long text-xl grad"></i></div>
+                    <h3 class="text-xl font-bold mb-3">Shift-Left Testing</h3>
+                    <p class="text-gray-400 leading-relaxed">Embedding quality from the earliest stages of development &mdash; integrating testing into design and build phases to catch defects early, cut costs, and accelerate delivery without compromising standards.</p>
                 </div>
-                
-                <!-- Social Links Placeholder -->
-                <div class="mt-12 text-center">
-                    <p class="text-gray-400 mb-6">Connect with me on professional networks</p>
-                    <div class="flex justify-center gap-6">
-                        <a href="https://www.linkedin.com/in/sweata-swagat-panda-634331216" target="_blank" rel="noopener noreferrer" class="w-14 h-14 bg-dark-card border border-gray-700 rounded-full flex items-center justify-center hover:border-cobalt hover:bg-cobalt/10 transition-all">
-                            <i class="fab fa-linkedin text-2xl"></i>
-                        </a>
-                        <a href="https://github.com/sweata-swagat-panda" target="_blank" rel="noopener noreferrer" class="w-14 h-14 bg-dark-card border border-gray-700 rounded-full flex items-center justify-center hover:border-teal hover:bg-teal/10 transition-all">
-                            <i class="fab fa-github text-2xl"></i>
-                        </a>
-                    </div>
+                <div class="glass glass-hover rounded-2xl p-8 reveal">
+                    <div class="chip mb-5"><i class="fas fa-chart-line text-xl grad"></i></div>
+                    <h3 class="text-xl font-bold mb-3">ROI-Driven Automation</h3>
+                    <p class="text-gray-400 leading-relaxed">Automation that delivers measurable value &mdash; <span class="text-white font-medium">$1.9M+ saved to date</span>. Prioritize high-impact scenarios, optimize execution (50&ndash;70% faster cycles), and leverage AI to maximize return with reliable coverage.</p>
+                </div>
+                <div class="glass glass-hover rounded-2xl p-8 reveal">
+                    <div class="chip mb-5"><i class="fas fa-arrows-rotate text-xl grad"></i></div>
+                    <h3 class="text-xl font-bold mb-3">CI/CD Excellence</h3>
+                    <p class="text-gray-400 leading-relaxed">Robust pipelines for rapid, reliable releases. Automated suites on Azure DevOps and Jenkins/GitHub with multi-VDI grids ensure continuous validation and SLA-compliant time-to-market.</p>
+                </div>
+                <div class="glass glass-hover rounded-2xl p-8 reveal">
+                    <div class="chip mb-5"><i class="fas fa-users text-xl grad"></i></div>
+                    <h3 class="text-xl font-bold mb-3">People Leadership</h3>
+                    <p class="text-gray-400 leading-relaxed">Leading a <span class="text-white font-medium">22-member team (6 promoted)</span> and 100+ hiring interviews. Orchestrating dev, operations, and business collaboration &mdash; owning strategy, mentoring engineers, and aligning delivery with Agile/Scrum.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications -->
+    <section id="certifications" class="py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-14 reveal">
+                <p class="eyebrow grad mb-3">Certifications</p>
+                <h2 class="text-4xl md:text-5xl font-bold">Credentials &amp; <span class="grad">expertise</span></h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                <div class="glass glass-hover rounded-2xl p-6 flex items-center gap-4 reveal"><div class="chip shrink-0"><i class="fas fa-award grad"></i></div><div><h3 class="font-bold">ISTQB &mdash; Advanced Level</h3><p class="text-gray-500 text-sm">Certified Tester, Advanced (2021)</p></div></div>
+                <div class="glass glass-hover rounded-2xl p-6 flex items-center gap-4 reveal"><div class="chip shrink-0"><i class="fas fa-certificate grad"></i></div><div><h3 class="font-bold">Tosca Automation Engineer 1</h3><p class="text-gray-500 text-sm">Tricentis Certified Professional</p></div></div>
+                <div class="glass glass-hover rounded-2xl p-6 flex items-center gap-4 reveal"><div class="chip shrink-0"><i class="fas fa-certificate grad"></i></div><div><h3 class="font-bold">Tosca Test Design &amp; Automation 1 &amp; 2</h3><p class="text-gray-500 text-sm">Advanced Test Design</p></div></div>
+                <div class="glass glass-hover rounded-2xl p-6 flex items-center gap-4 reveal"><div class="chip shrink-0"><i class="fas fa-certificate grad"></i></div><div><h3 class="font-bold">Tosca Query Language (TQL)</h3><p class="text-gray-500 text-sm">TQL Specialist</p></div></div>
+                <div class="glass glass-hover rounded-2xl p-6 flex items-center gap-4 reveal"><div class="chip shrink-0"><i class="fas fa-certificate grad"></i></div><div><h3 class="font-bold">Tosca Exploratory Testing</h3><p class="text-gray-500 text-sm">Exploratory Testing Specialist</p></div></div>
+                <div class="glass glass-hover rounded-2xl p-6 flex items-center gap-4 reveal"><div class="chip shrink-0"><i class="fas fa-certificate grad"></i></div><div><h3 class="font-bold">Tosca qTest &amp; API Automation</h3><p class="text-gray-500 text-sm">API Testing &amp; qTest</p></div></div>
+                <div class="glass glass-hover rounded-2xl p-6 flex items-center gap-4 reveal"><div class="chip shrink-0"><i class="fab fa-microsoft grad"></i></div><div><h3 class="font-bold">Microsoft PL-900 &amp; AZ-500</h3><p class="text-gray-500 text-sm">Power Platform &amp; Azure Security</p></div></div>
+                <div class="glass glass-hover rounded-2xl p-6 flex items-center gap-4 reveal"><div class="chip shrink-0"><i class="fas fa-code grad"></i></div><div><h3 class="font-bold">Java &amp; Python Programming</h3><p class="text-gray-500 text-sm">Language Proficiency</p></div></div>
+                <div class="glass glass-hover rounded-2xl p-6 flex items-center gap-4 reveal"><div class="chip shrink-0"><i class="fas fa-shield-halved grad"></i></div><div><h3 class="font-bold">Information Security</h3><p class="text-gray-500 text-sm">Elite Advocate</p></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards -->
+    <section id="awards" class="py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-14 reveal">
+                <p class="eyebrow grad mb-3">Recognition</p>
+                <h2 class="text-4xl md:text-5xl font-bold">Awards &amp; <span class="grad">honors</span></h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+                <div class="glass glass-hover rounded-2xl p-6 text-center reveal"><i class="fas fa-trophy text-4xl mb-4" style="color:#FBBF24"></i><h3 class="font-bold text-lg">TechStar Award</h3><p class="text-gray-500 text-sm mb-1">Accenture</p><p class="grad font-display font-semibold">2022</p></div>
+                <div class="glass glass-hover rounded-2xl p-6 text-center reveal"><i class="fas fa-award text-4xl mb-4" style="color:#FBBF24"></i><h3 class="font-bold text-lg">ACE Award</h3><p class="text-gray-500 text-sm mb-1">Accenture</p><p class="grad font-display font-semibold">2021 &amp; 2024</p></div>
+                <div class="glass glass-hover rounded-2xl p-6 text-center reveal"><i class="fas fa-star text-4xl mb-4" style="color:#FBBF24"></i><h3 class="font-bold text-lg">Sparkling Star</h3><p class="text-gray-500 text-sm mb-1">Accenture</p><p class="grad font-display font-semibold">2022, 2023, 2024</p></div>
+                <div class="glass glass-hover rounded-2xl p-6 text-center reveal"><i class="fas fa-medal text-4xl mb-4" style="color:#FBBF24"></i><h3 class="font-bold text-lg">Tosca Community</h3><p class="text-gray-500 text-sm mb-1">Tricentis</p><p class="grad font-display font-semibold">2024</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education" class="py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-14 reveal">
+                <p class="eyebrow grad mb-3">Education</p>
+                <h2 class="text-4xl md:text-5xl font-bold">Academic <span class="grad">foundation</span></h2>
+            </div>
+            <div class="max-w-4xl mx-auto space-y-4">
+                <div class="glass glass-hover rounded-2xl p-6 flex flex-col md:flex-row md:items-center md:justify-between gap-3 reveal">
+                    <div class="flex items-center gap-4"><div class="chip shrink-0"><i class="fas fa-graduation-cap grad"></i></div><div><h3 class="text-lg font-bold">Executive Programme in General Management</h3><p class="text-gray-500">Indian Institute of Management (IIM) Calcutta</p></div></div>
+                    <span class="grad font-display font-semibold">2022 &ndash; 2023</span>
+                </div>
+                <div class="glass glass-hover rounded-2xl p-6 flex flex-col md:flex-row md:items-center md:justify-between gap-3 reveal">
+                    <div class="flex items-center gap-4"><div class="chip shrink-0"><i class="fas fa-graduation-cap grad"></i></div><div><h3 class="text-lg font-bold">B.Tech, Electronics &amp; Electrical Engineering</h3><p class="text-gray-500">KIIT University, Bhubaneswar</p></div></div>
+                    <span class="grad font-display font-semibold">2015 &ndash; 2019</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto glass rounded-3xl p-10 md:p-14 text-center reveal">
+                <p class="eyebrow grad mb-3">Get In Touch</p>
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Let's build <span class="grad">quality together</span></h2>
+                <p class="text-gray-400 text-lg mb-10 max-w-xl mx-auto">Let's talk about scaling quality with AI-powered test automation and building teams that ship with confidence.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-10">
+                    <a href="mailto:s.swagatpanda@gmail.com" class="btn-primary px-7 py-3.5 rounded-xl font-semibold text-white flex items-center gap-2"><i class="fas fa-envelope"></i> s.swagatpanda@gmail.com</a>
+                    <a href="tel:+919778632345" class="btn-ghost px-7 py-3.5 rounded-xl font-semibold text-gray-100 flex items-center gap-2"><i class="fas fa-phone"></i> +91 97786 32345</a>
+                </div>
+                <div class="flex justify-center gap-4">
+                    <a href="https://www.linkedin.com/in/sweata-swagat-panda-634331216" target="_blank" rel="noopener noreferrer" class="w-12 h-12 glass glass-hover rounded-xl flex items-center justify-center text-xl hover:text-indigo"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/sweata-swagat-panda" target="_blank" rel="noopener noreferrer" class="w-12 h-12 glass glass-hover rounded-xl flex items-center justify-center text-xl hover:text-cyan"><i class="fab fa-github"></i></a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-dark-card border-t border-gray-800 py-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center">
-                <p class="text-gray-400 mb-2">
-                    &copy; 2025 Sweata Swagat Panda. All rights reserved.
-                </p>
-                <p class="text-gray-500 text-sm">
-                    Automation Quality Engineering Specialist | Precision-Driven Testing Excellence
-                </p>
-            </div>
+    <footer class="border-t border-white/5 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-gray-400 mb-1">&copy; 2026 Sweata Swagat Panda</p>
+            <p class="text-gray-600 text-sm font-display">Test Automation Lead &middot; Playwright &amp; Tosca &middot; AI-Powered Quality Engineering</p>
         </div>
     </footer>
-    
-    <!-- JavaScript -->
+
     <script>
-        // Mobile Menu Toggle
+        // Scroll progress
+        const progress = document.getElementById('progress');
+        window.addEventListener('scroll', () => {
+            const h = document.documentElement;
+            const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+            progress.style.width = scrolled + '%';
+        });
+
+        // Mobile menu
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-        
-        // Close mobile menu when clicking a link
-        const mobileLinks = mobileMenu.querySelectorAll('a');
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
-        });
-        
-        // Smooth scroll for anchor links
+        mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+        mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
-                e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
+                if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
             });
         });
-        
-        // Download Resume functionality
-        document.getElementById('download-resume').addEventListener('click', function(e) {
-            e.preventDefault();
-            alert('Resume download will be available soon. Please contact via email for the latest version.');
-        });
-        
-        // Intersection Observer for fade-in animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
+
+        // Reveal on scroll
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, i) => {
                 if (entry.isIntersecting) {
-                    entry.target.style.opacity = '0';
-                    entry.target.style.transform = 'translateY(20px)';
-                    
-                    setTimeout(() => {
-                        entry.target.style.transition = 'all 0.6s ease-out';
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }, 100);
-                    
-                    observer.unobserve(entry.target);
+                    setTimeout(() => entry.target.classList.add('in'), (i % 4) * 80);
+                    revealObserver.unobserve(entry.target);
                 }
             });
-        }, observerOptions);
-        
-        // Observe all sections
-        document.querySelectorAll('section').forEach(section => {
-            observer.observe(section);
-        });
-        
-        // Active nav link on scroll
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+        // Active nav on scroll
+        const sections = document.querySelectorAll('section[id]');
+        const navlinks = document.querySelectorAll('.navlink');
         window.addEventListener('scroll', () => {
             let current = '';
-            const sections = document.querySelectorAll('section');
-            
             sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (pageYOffset >= (sectionTop - 200)) {
-                    current = section.getAttribute('id');
-                }
+                if (pageYOffset >= section.offsetTop - 120) current = section.getAttribute('id');
             });
-            
-            document.querySelectorAll('nav a').forEach(link => {
-                link.classList.remove('text-cobalt');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('text-cobalt');
-                }
+            navlinks.forEach(link => {
+                link.classList.toggle('active', link.getAttribute('href') === '#' + current);
             });
         });
     </script>
-    
 </body>
 </html>
